@@ -3,7 +3,7 @@ import allure
 
 
 @allure.title("Отображение элементов меню")
-@allure.tag("web_tests")
+@allure.tag("mobile_tests")
 @allure.feature("menu_page")
 @allure.severity('critical')
 def test_menu_button_title(context):

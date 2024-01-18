@@ -2,7 +2,7 @@ from lamoda_mobile_tests_framework.pages.catalog_page import catalog
 import allure
 
 
-@allure.title("Соответствие названий разделов")
+@allure.title("Соответствие названий разделов в каталоге")
 @allure.tag("mobile_tests")
 @allure.feature("catalog_page")
 @allure.severity('critical')
