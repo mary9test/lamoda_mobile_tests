@@ -1,7 +1,7 @@
 import os
 from appium.options.android import UiAutomator2Options
 from pydantic import BaseModel
-from lamoda_mobile_tests_framework.utils import helpers
+from lamoda_mobile_tests_framework.utils.helpers import abs_path
 
 
 class Settings(BaseModel):
@@ -21,13 +21,15 @@ class Settings(BaseModel):
         options = UiAutomator2Options()
 
         if context == 'local_emulator':
-            options.set_capability('app', helpers.abs_path(self.app))
+            options.set_capability('app', abs_path(self.app))
             options.set_capability('udid', self.udid)
+            options.set_capability('remote_url', self.remote_url)
 
         if context == 'bstack':
             options.set_capability('app', self.app)
             options.set_capability('platformVersion', self.platformVersion)
             options.set_capability('deviceName', self.deviceName)
+            options.set_capability('projectName', self.projectName)
             options.set_capability(
                 'bstack:options', {
                     'buildName': self.buildName,

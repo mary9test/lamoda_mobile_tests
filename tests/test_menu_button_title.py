@@ -1,4 +1,5 @@
 from lamoda_mobile_tests_framework.pages.menu_page import menu
+from lamoda_mobile_tests_framework.utils.helpers import skip_initial_screens
 import allure
 
 
@@ -7,6 +8,7 @@ import allure
 @allure.feature("menu_page")
 @allure.severity('critical')
 def test_menu_button_title(context):
+    skip_initial_screens()
     menu.catalog_button_is_displayed()
     menu.main_page_button_is_displayed()
     menu.basket_button_is_displayed()

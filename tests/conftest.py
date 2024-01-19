@@ -7,16 +7,6 @@ from dotenv import load_dotenv
 from selene import browser, support
 from appium import webdriver
 
-from appium.webdriver.common.appiumby import AppiumBy
-
-
-def skip_initial_screens():
-    browser.element(
-        (AppiumBy.XPATH, '//android.widget.RadioButton[@resource-id="com.lamoda.lite:id/russiaButton"]')).click()
-    browser.element((AppiumBy.XPATH, '//android.widget.Button[@resource-id="com.lamoda.lite:id/button"]')).click()
-    browser.element((AppiumBy.XPATH, '//android.widget.TextView[@resource-id="com.lamoda.lite:id/dismiss"]')).click()
-    browser.element((AppiumBy.XPATH, '//android.widget.TextView[@resource-id="com.lamoda.lite:id/dismiss"]')).click()
-
 
 def pytest_addoption(parser):
     parser.addoption("--context", default="bstack", help="Specify context")
@@ -49,7 +39,7 @@ def android_mobile_management(context):
 
     browser.config._wait_decorator = support._logging.wait_with(
         context=allure_commons._allure.StepContext)
-    skip_initial_screens()
+
     yield
 
     allure_attach.attach_bstack_screenshot()
