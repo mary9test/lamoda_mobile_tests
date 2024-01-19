@@ -30,7 +30,7 @@
 
 ## Отчет о пройденных тестах в Telegram
 В проекте настроена отправка отчета о прохождении тестов в Telegram
-![img.png](telegram/img.png)
+![img.png](pictures/img.png)
 
 ## Интеграция с Jira
 <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-1067">Ссылка на проект в Jira</a>
